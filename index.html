@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Power Affirmation</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #facc15;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 100px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .affirmation {
+      margin-top: 50px;
+      font-size: 1.8em;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌀 Daily Power Affirmation</h1>
+  <div class="affirmation" id="affirmation">Loading...</div>
+
+  <script>
+    const affirmations = [
+      "I am aligned, on purpose, and unstoppable.",
+      "I don’t chase—I attract. What belongs to me will find me.",
+      "Every setback is just a setup for my next breakthrough.",
+      "I’m not lucky, I’m laser focused.",
+      "God’s got me. I walk in peace and power.",
+      "I create. I impact. I thrive.",
+      "I’ve already won in the spirit—now I’m catching up in the natural."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * affirmations.length);
+    document.getElementById("affirmation").innerText = affirmations[randomIndex];
+  </script>
+</body>
+</html>
