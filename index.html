@@ -48,6 +48,20 @@
     button:hover {
       background-color: #fde68a;
     }
+    @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade {
+  animation: fadeIn 0.6s ease-in-out;
+}
   </style>
 </head>
 <body>
@@ -269,8 +283,12 @@
     let currentIndex = Math.floor(Math.random() * affirmations.length);
 
     function showAffirmation(index) {
-      document.getElementById("affirmation").innerText = affirmations[index];
-    }
+  const affirmationEl = document.getElementById("affirmation");
+  affirmationEl.classList.remove("fade"); // Reset animation
+  void affirmationEl.offsetWidth; // Re-trigger CSS animation
+  affirmationEl.innerText = affirmations[index];
+  affirmationEl.classList.add("fade");
+}
 
     function showNextAffirmation() {
       currentIndex = (currentIndex + 1) % affirmations.length;
